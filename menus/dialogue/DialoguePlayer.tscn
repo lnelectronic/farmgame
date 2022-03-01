@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://menus/dialogue/DialoguePlayer.gd" type="Script" id=1]
+[ext_resource path="res://tilesets/Asset/Button1.png" type="Texture" id=2]
+[ext_resource path="res://Font/RD CHULAJARUEK.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[node name="DialoguePlayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+dialogue_file = "res://menus/dialogue/Json/Dialog.json"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+visible = false
+margin_left = 224.316
+margin_top = 147.263
+margin_right = 616.316
+margin_bottom = 274.263
+texture = ExtResource( 2 )
+region_rect = Rect2( 3.00947, 2.22687, 26.5069, 10.8868 )
+
+[node name="name" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 21.0
+margin_top = 18.0
+margin_right = 79.0
+margin_bottom = 48.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "name"
+
+[node name="meassge" type="RichTextLabel" parent="NinePatchRect"]
+margin_left = 21.0
+margin_top = 64.0
+margin_right = 739.0
+margin_bottom = 127.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "meassge"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

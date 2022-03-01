@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://menus/dialogue/Dialogue.gd" type="Script" id=1]
+[ext_resource path="res://Font/RD CHULAJARUEK.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Dialogue" type="Panel"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+
+[node name="Game Intro" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -659.786
+margin_top = -354.419
+margin_right = -113.786
+margin_bottom = -112.419
+rect_scale = Vector2( 2.42292, 2.18526 )
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_enabled = true
+bbcode_text = "สวัสดีชาวไร่!
+
+คุณได้รับมรดกที่ดินแปลงเก่าจากคุณปู่
+สิ่งที่คุณต้องทำคือการปลูกพืชผลและดูแลที่ดินโดยใช้เครื่องมือในคลังของคุณ 
+การควบคุมสามารถพบได้ในเมนู \"การควบคุม\" ซึ่งคุณสามารถค้นหาได้โดยการกดปุ่ม \"Esc\" 
+คุณสามารถนอนบนเตียงเพื่อก้าวไปสู่วันถัดไปได้ด้วยการยืนข้างเตียงและกดปุ่ม \"E\" 
+
+ขอให้คุณทำฟาร์มอย่างมีความสุข!"
+text = "สวัสดีชาวไร่!
+
+คุณได้รับมรดกที่ดินแปลงเก่าจากคุณปู่
+สิ่งที่คุณต้องทำคือการปลูกพืชผลและดูแลที่ดินโดยใช้เครื่องมือในคลังของคุณ 
+การควบคุมสามารถพบได้ในเมนู \"การควบคุม\" ซึ่งคุณสามารถค้นหาได้โดยการกดปุ่ม \"Esc\" 
+คุณสามารถนอนบนเตียงเพื่อก้าวไปสู่วันถัดไปได้ด้วยการยืนข้างเตียงและกดปุ่ม \"E\" 
+
+ขอให้คุณทำฟาร์มอย่างมีความสุข!"
+scroll_active = false
+
+[node name="To the game button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 262.286
+margin_top = -195.245
+margin_right = 370.286
+margin_bottom = -161.245
+rect_scale = Vector2( 2.1741, 2.02142 )
+custom_fonts/font = SubResource( 2 )
+text = "เข้าสู่เกม"
+[connection signal="pressed" from="To the game button" to="." method="_on_To_the_game_button_pressed"]

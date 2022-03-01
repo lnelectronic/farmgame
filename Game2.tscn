@@ -1,0 +1,71 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://tilesets/tres files/crops.tres" type="TileSet" id=1]
+[ext_resource path="res://tilesets/tres files/dirtTiles.tres" type="TileSet" id=2]
+[ext_resource path="res://tilesets/tres files/exploreObjectTiles.tres" type="TileSet" id=3]
+[ext_resource path="res://tilesets/tres files/exploreTiles.tres" type="TileSet" id=4]
+[ext_resource path="res://grid/GridVisualizer.gd" type="Script" id=5]
+[ext_resource path="res://tilesets/tres files/interiorItemTiles.tres" type="TileSet" id=6]
+[ext_resource path="res://tilesets/tres files/interiorTiles.tres" type="TileSet" id=7]
+
+[node name="Game2" type="Node"]
+
+[node name="Farm" type="Node2D" parent="."]
+
+[node name="Crops" type="TileMap" parent="Farm"]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Dirt" type="TileMap" parent="Farm"]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Foreground" type="TileMap" parent="Farm"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Object1" type="TileMap" parent="Farm"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Object2" type="TileMap" parent="Farm"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Background1" type="TileMap" parent="Farm"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Background2" type="TileMap" parent="Farm"]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="GridVisualizer" type="Node2D" parent="Farm"]
+script = ExtResource( 5 )
+
+[node name="House" type="Node2D" parent="."]
+
+[node name="Object1" type="TileMap" parent="House"]
+tile_set = ExtResource( 6 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="Background1" type="TileMap" parent="House"]
+tile_set = ExtResource( 7 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="BackGround2" type="TileMap" parent="House"]
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 32, 32 )
+format = 1
+
+[node name="GridVisualizer" type="Node2D" parent="House"]
+script = ExtResource( 5 )

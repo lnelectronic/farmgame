@@ -1,0 +1,272 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://menus/pause/Pause.gd" type="Script" id=1]
+[ext_resource path="res://Font/RD CHULAJARUEK.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://menus/controls/Controls Container.tscn" type="PackedScene" id=3]
+[ext_resource path="res://menus/pause/Back to Pause Menu Button/Back to Pause Menu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://menus/pause/Save Game/Save Game.gd" type="Script" id=5]
+[ext_resource path="res://menus/pause/Save Game/Back to Pause Menu from Save Menu.gd" type="Script" id=6]
+[ext_resource path="res://menus/controls/keys/Back.png" type="Texture" id=7]
+[ext_resource path="res://menus/pause/Save Game/Back to Save Menu.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=8]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=9]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=10]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=11]
+font_data = ExtResource( 2 )
+
+[node name="PauseMenu" type="Control"]
+pause_mode = 2
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+mouse_filter = 1
+script = ExtResource( 1 )
+
+[node name="Background" type="ColorRect" parent="."]
+show_behind_parent = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -240.0
+margin_top = -135.0
+margin_right = 240.0
+margin_bottom = 135.0
+rect_min_size = Vector2( 480, 270 )
+mouse_filter = 1
+color = Color( 0, 0, 0, 0.392274 )
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -62.7579
+margin_top = -94.5023
+margin_right = 69.2421
+margin_bottom = 97.4977
+custom_constants/separation = 7
+alignment = 1
+
+[node name="Paused" type="Label" parent="Buttons"]
+margin_right = 132.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 1 )
+text = "หยุดชั่วคราว"
+align = 1
+valign = 1
+
+[node name="Resume" type="Button" parent="Buttons"]
+margin_top = 35.0
+margin_right = 132.0
+margin_bottom = 69.0
+custom_fonts/font = SubResource( 2 )
+text = "เล่นต่อ"
+
+[node name="Controls" type="Button" parent="Buttons"]
+margin_top = 76.0
+margin_right = 132.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 3 )
+text = "ตั้งค่า"
+
+[node name="Quit to Main Menu" type="Button" parent="Buttons"]
+margin_top = 117.0
+margin_right = 132.0
+margin_bottom = 151.0
+custom_fonts/font = SubResource( 4 )
+text = "กลับสู่หน้าหลัก"
+
+[node name="Quit to Desktop" type="Button" parent="Buttons"]
+margin_top = 158.0
+margin_right = 132.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 5 )
+text = "ออกจากเกม"
+
+[node name="Controls" type="Control" parent="."]
+editor/display_folded = true
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 1
+
+[node name="Controls Container" parent="Controls" instance=ExtResource( 3 )]
+margin_left = -127.0
+margin_top = -104.0
+margin_right = 401.0
+margin_bottom = 332.0
+rect_scale = Vector2( 0.5, 0.5 )
+mouse_filter = 2
+
+[node name="Back to Pause Menu" parent="Controls" instance=ExtResource( 4 )]
+
+[node name="Save Game" type="Control" parent="."]
+margin_right = 132.0
+mouse_filter = 1
+script = ExtResource( 5 )
+
+[node name="Save Menu" type="Control" parent="Save Game"]
+visible = false
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="Save Options" type="VBoxContainer" parent="Save Game/Save Menu"]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -80.0
+margin_top = -34.0
+margin_right = 79.0
+margin_bottom = 34.0
+
+[node name="Overwrite" type="Button" parent="Save Game/Save Menu/Save Options"]
+margin_right = 159.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 6 )
+text = "บันทึกปัจจุบัน"
+
+[node name="New Save" type="Button" parent="Save Game/Save Menu/Save Options"]
+margin_top = 38.0
+margin_right = 159.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 7 )
+text = "สร้างบันทึก"
+
+[node name="Quit without Saving" type="Button" parent="Save Game/Save Menu/Save Options"]
+margin_top = 76.0
+margin_right = 159.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 8 )
+text = "ออกโดยไม่บันทึก"
+
+[node name="Back to Pause Menu from Save Menu" type="Control" parent="Save Game/Save Menu"]
+editor/display_folded = true
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 180.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 6 )
+
+[node name="Backdrop" type="ColorRect" parent="Save Game/Save Menu/Back to Pause Menu from Save Menu"]
+margin_right = 170.0
+margin_bottom = 25.0
+color = Color( 0.2, 0.184314, 0.2, 1 )
+
+[node name="Container" type="HBoxContainer" parent="Save Game/Save Menu/Back to Pause Menu from Save Menu"]
+margin_right = 165.0
+margin_bottom = 25.0
+
+[node name="Button" type="Button" parent="Save Game/Save Menu/Back to Pause Menu from Save Menu/Container"]
+margin_right = 28.0
+margin_bottom = 28.0
+icon = ExtResource( 7 )
+flat = true
+
+[node name="Label" type="Label" parent="Save Game/Save Menu/Back to Pause Menu from Save Menu/Container"]
+margin_left = 32.0
+margin_right = 160.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 9 )
+text = "กลับสู่หน้าหยุดชั่วคราว"
+align = 1
+
+[node name="New Save Menu" type="Control" parent="Save Game"]
+editor/display_folded = true
+visible = false
+margin_right = 480.0
+margin_bottom = 270.0
+
+[node name="New Save" type="LineEdit" parent="Save Game/New Save Menu"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.5
+margin_top = -15.0
+margin_right = 99.5
+margin_bottom = 15.0
+rect_min_size = Vector2( 199, 30 )
+rect_scale = Vector2( 1.02818, 0.944247 )
+custom_fonts/font = SubResource( 10 )
+max_length = 15
+placeholder_text = "  กรุณาใส่ชื่อเพื่อสร้างบันทึก"
+caret_blink = true
+caret_blink_speed = 0.4
+
+[node name="Back to Save Menu" type="Control" parent="Save Game/New Save Menu"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 166.0
+margin_bottom = 35.0
+rect_scale = Vector2( 0.7, 0.7 )
+script = ExtResource( 8 )
+
+[node name="Backdrop" type="ColorRect" parent="Save Game/New Save Menu/Back to Save Menu"]
+margin_right = 156.0
+margin_bottom = 25.0
+color = Color( 0.2, 0.184314, 0.2, 1 )
+
+[node name="Container" type="HBoxContainer" parent="Save Game/New Save Menu/Back to Save Menu"]
+margin_right = 165.0
+margin_bottom = 25.0
+
+[node name="Button" type="Button" parent="Save Game/New Save Menu/Back to Save Menu/Container"]
+margin_right = 28.0
+margin_bottom = 28.0
+icon = ExtResource( 7 )
+flat = true
+
+[node name="Label" type="Label" parent="Save Game/New Save Menu/Back to Save Menu/Container"]
+margin_left = 32.0
+margin_right = 112.0
+margin_bottom = 28.0
+custom_fonts/font = SubResource( 11 )
+text = "กลับสู่หน้าหลัก"
+align = 1
+[connection signal="pressed" from="Buttons/Resume" to="." method="_on_Resume_pressed"]
+[connection signal="pressed" from="Buttons/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="Buttons/Quit to Main Menu" to="." method="_on_Quit_to_Main_Menu_pressed"]
+[connection signal="pressed" from="Buttons/Quit to Desktop" to="." method="_on_Quit_to_Desktop_pressed"]
+[connection signal="pressed" from="Save Game/Save Menu/Save Options/Overwrite" to="Save Game" method="_on_Overwrite_pressed"]
+[connection signal="pressed" from="Save Game/Save Menu/Save Options/New Save" to="Save Game" method="_on_New_Save_pressed"]
+[connection signal="pressed" from="Save Game/Save Menu/Save Options/Quit without Saving" to="Save Game" method="_on_Quit_without_Saving_pressed"]
+[connection signal="pressed" from="Save Game/Save Menu/Back to Pause Menu from Save Menu/Container/Button" to="Save Game/Save Menu/Back to Pause Menu from Save Menu" method="_on_Button_pressed"]
+[connection signal="text_entered" from="Save Game/New Save Menu/New Save" to="Save Game" method="_on_New_Save_text_entered"]
+[connection signal="pressed" from="Save Game/New Save Menu/Back to Save Menu/Container/Button" to="Save Game/New Save Menu/Back to Save Menu" method="_on_Button_pressed"]

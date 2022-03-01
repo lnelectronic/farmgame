@@ -1,0 +1,147 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://menus/main/MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Font/RD CHULAJARUEK.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://menus/main/background.png" type="Texture" id=3]
+[ext_resource path="res://sound/music/titleScreen.wav" type="AudioStream" id=4]
+[ext_resource path="res://menus/load/Load Game.gd" type="Script" id=5]
+[ext_resource path="res://menus/main/back to main menu button/Back to Main Menu.tscn" type="PackedScene" id=6]
+[ext_resource path="res://menus/controls/Controls.tscn" type="PackedScene" id=7]
+[ext_resource path="res://menus/graphics/Graphics.tscn" type="PackedScene" id=8]
+[ext_resource path="res://menus/dialogue/Dialogue.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[node name="MainMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -594.46
+margin_top = 72.9394
+margin_right = -362.46
+margin_bottom = 100.939
+rect_scale = Vector2( 5.17452, 3.71084 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.0352941, 0.0431373, 0.0392157, 1 )
+text = "Sufficiency Economy Farm Game"
+
+[node name="background" type="Sprite" parent="."]
+z_index = -1
+texture = ExtResource( 3 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 1366, 768 )
+
+[node name="Buttons" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -148.929
+margin_top = -72.7925
+margin_right = -0.92865
+margin_bottom = 75.2075
+rect_scale = Vector2( 2.06328, 2.16054 )
+alignment = 1
+
+[node name="New Game" type="Button" parent="Buttons"]
+margin_right = 148.0
+margin_bottom = 34.0
+custom_fonts/font = SubResource( 2 )
+text = "เริ่มเกม"
+
+[node name="Load Game" type="Button" parent="Buttons"]
+margin_top = 38.0
+margin_right = 148.0
+margin_bottom = 72.0
+custom_fonts/font = SubResource( 3 )
+text = "โหลดเกม"
+
+[node name="Controls" type="Button" parent="Buttons"]
+margin_top = 76.0
+margin_right = 148.0
+margin_bottom = 110.0
+custom_fonts/font = SubResource( 4 )
+text = "ตั้งค่า"
+
+[node name="Graphics" type="Button" parent="Buttons"]
+visible = false
+margin_top = 114.0
+margin_right = 148.0
+margin_bottom = 134.0
+text = "Graphics"
+
+[node name="Quit to Desktop" type="Button" parent="Buttons"]
+margin_top = 114.0
+margin_right = 148.0
+margin_bottom = 148.0
+custom_fonts/font = SubResource( 5 )
+text = "ออก"
+
+[node name="titleScreenMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -15.0
+
+[node name="Load Game" type="Control" parent="."]
+visible = false
+margin_right = 1366.0
+margin_bottom = 768.0
+rect_min_size = Vector2( 1366, 768 )
+script = ExtResource( 5 )
+
+[node name="Saves" type="ScrollContainer" parent="Load Game"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -30.0
+margin_top = -30.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_scale = Vector2( 3, 3 )
+scroll_horizontal_enabled = false
+scroll_vertical_enabled = false
+
+[node name="Buttons" type="VBoxContainer" parent="Load Game/Saves"]
+alignment = 1
+
+[node name="Back to Main Menu" parent="Load Game" instance=ExtResource( 6 )]
+
+[node name="Controls" parent="." instance=ExtResource( 7 )]
+visible = false
+margin_left = 0.0
+margin_right = 0.0
+
+[node name="Graphics" parent="." instance=ExtResource( 8 )]
+visible = false
+margin_left = 0.0
+margin_right = 0.0
+
+[node name="Dialogue" parent="." instance=ExtResource( 9 )]
+visible = false
+[connection signal="pressed" from="Buttons/New Game" to="." method="_on_New_Game_pressed"]
+[connection signal="pressed" from="Buttons/Load Game" to="." method="_on_Load_Game_pressed"]
+[connection signal="pressed" from="Buttons/Controls" to="." method="_on_Controls_pressed"]
+[connection signal="pressed" from="Buttons/Graphics" to="." method="_on_Graphics_pressed"]
+[connection signal="pressed" from="Buttons/Quit to Desktop" to="." method="_on_Quit_to_Desktop_pressed"]

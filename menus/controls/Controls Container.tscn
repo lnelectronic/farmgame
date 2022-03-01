@@ -1,0 +1,315 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://menus/controls/keys/Up.png" type="Texture" id=1]
+[ext_resource path="res://menus/controls/keys/Left.png" type="Texture" id=2]
+[ext_resource path="res://menus/controls/keys/Down.png" type="Texture" id=3]
+[ext_resource path="res://menus/controls/keys/Right.png" type="Texture" id=4]
+[ext_resource path="res://menus/controls/keys/W.png" type="Texture" id=5]
+[ext_resource path="res://menus/controls/keys/A.png" type="Texture" id=6]
+[ext_resource path="res://menus/controls/keys/S.png" type="Texture" id=7]
+[ext_resource path="res://menus/controls/keys/D.png" type="Texture" id=8]
+[ext_resource path="res://menus/controls/keys/Enter.png" type="Texture" id=9]
+[ext_resource path="res://menus/controls/keys/Space.png" type="Texture" id=10]
+[ext_resource path="res://menus/controls/keys/Q.png" type="Texture" id=11]
+[ext_resource path="res://menus/controls/keys/B.png" type="Texture" id=12]
+[ext_resource path="res://menus/controls/keys/E.png" type="Texture" id=13]
+[ext_resource path="res://menus/controls/keys/Tab.png" type="Texture" id=14]
+[ext_resource path="res://menus/controls/keys/Escape.png" type="Texture" id=15]
+
+[node name="Controls Container" type="Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.0
+margin_top = -218.0
+margin_right = 264.0
+margin_bottom = 218.0
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -264.0
+margin_top = -215.0
+margin_right = 264.0
+margin_bottom = 215.0
+color = Color( 0.203125, 0.186462, 0.200521, 1 )
+
+[node name="Container" type="VBoxContainer" parent="."]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -254.0
+margin_top = -208.0
+margin_right = 254.0
+margin_bottom = 208.0
+custom_constants/separation = 10
+
+[node name="Title" type="Label" parent="Container"]
+margin_right = 508.0
+margin_bottom = 14.0
+text = "Controls Scheme"
+align = 1
+
+[node name="Controls" type="HBoxContainer" parent="Container"]
+margin_top = 24.0
+margin_right = 508.0
+margin_bottom = 416.0
+custom_constants/separation = 12
+
+[node name="Left Box" type="MarginContainer" parent="Container/Controls"]
+margin_right = 199.0
+margin_bottom = 392.0
+custom_constants/margin_top = 8
+custom_constants/margin_left = 0
+
+[node name="Description" type="VBoxContainer" parent="Container/Controls/Left Box"]
+margin_top = 8.0
+margin_right = 199.0
+margin_bottom = 392.0
+custom_constants/separation = 22
+
+[node name="Move" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_right = 199.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Move"
+
+[node name="Change Facing Direction" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 36.0
+margin_right = 199.0
+margin_bottom = 50.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Change facing direction"
+
+[node name="Action" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 72.0
+margin_right = 199.0
+margin_bottom = 86.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Action"
+
+[node name="Super Action" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 108.0
+margin_right = 199.0
+margin_bottom = 122.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Super Action (hold to use)"
+
+[node name="Pickup or Drop" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 144.0
+margin_right = 199.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Pick up/drop item"
+
+[node name="Store" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 180.0
+margin_right = 199.0
+margin_bottom = 194.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Store item in bag"
+
+[node name="Sleep" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 216.0
+margin_right = 199.0
+margin_bottom = 230.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Sleep (must be next to bed)"
+
+[node name="Inventory" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 252.0
+margin_right = 199.0
+margin_bottom = 266.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Open/Close inventory"
+
+[node name="Equip" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 288.0
+margin_right = 199.0
+margin_bottom = 302.0
+text = "Equip item (while in inventory)"
+
+[node name="Swap" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 324.0
+margin_right = 199.0
+margin_bottom = 338.0
+text = "Swap items (while in inventory)"
+
+[node name="Pause" type="Label" parent="Container/Controls/Left Box/Description"]
+margin_top = 360.0
+margin_right = 199.0
+margin_bottom = 374.0
+rect_pivot_offset = Vector2( -65.8062, 304.541 )
+text = "Pause game"
+
+[node name="Right Box" type="MarginContainer" parent="Container/Controls"]
+margin_left = 211.0
+margin_right = 500.0
+margin_bottom = 392.0
+
+[node name="Images" type="VBoxContainer" parent="Container/Controls/Right Box"]
+margin_right = 289.0
+margin_bottom = 392.0
+custom_constants/separation = 4
+
+[node name="Move" type="HBoxContainer" parent="Container/Controls/Right Box/Images"]
+margin_right = 289.0
+margin_bottom = 32.0
+
+[node name="Up" type="TextureRect" parent="Container/Controls/Right Box/Images/Move"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 1 )
+
+[node name="Left" type="TextureRect" parent="Container/Controls/Right Box/Images/Move"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 2 )
+
+[node name="Down" type="TextureRect" parent="Container/Controls/Right Box/Images/Move"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 3 )
+
+[node name="Right" type="TextureRect" parent="Container/Controls/Right Box/Images/Move"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
+
+[node name="Face Direction" type="HBoxContainer" parent="Container/Controls/Right Box/Images"]
+editor/display_folded = true
+margin_top = 36.0
+margin_right = 289.0
+margin_bottom = 68.0
+
+[node name="W" type="TextureRect" parent="Container/Controls/Right Box/Images/Face Direction"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 5 )
+
+[node name="A" type="TextureRect" parent="Container/Controls/Right Box/Images/Face Direction"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+texture = ExtResource( 6 )
+
+[node name="S" type="TextureRect" parent="Container/Controls/Right Box/Images/Face Direction"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="D" type="TextureRect" parent="Container/Controls/Right Box/Images/Face Direction"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+texture = ExtResource( 8 )
+
+[node name="Action" type="HBoxContainer" parent="Container/Controls/Right Box/Images"]
+editor/display_folded = true
+margin_top = 72.0
+margin_right = 289.0
+margin_bottom = 104.0
+
+[node name="Enter" type="TextureRect" parent="Container/Controls/Right Box/Images/Action"]
+margin_right = 84.0
+margin_bottom = 32.0
+texture = ExtResource( 9 )
+
+[node name="Space" type="TextureRect" parent="Container/Controls/Right Box/Images/Action"]
+margin_left = 88.0
+margin_right = 248.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="Super Action" type="HBoxContainer" parent="Container/Controls/Right Box/Images"]
+margin_top = 108.0
+margin_right = 289.0
+margin_bottom = 140.0
+
+[node name="Enter" type="TextureRect" parent="Container/Controls/Right Box/Images/Super Action"]
+margin_right = 84.0
+margin_bottom = 32.0
+texture = ExtResource( 9 )
+
+[node name="Space" type="TextureRect" parent="Container/Controls/Right Box/Images/Super Action"]
+margin_left = 88.0
+margin_right = 248.0
+margin_bottom = 32.0
+texture = ExtResource( 10 )
+
+[node name="Q" type="TextureRect" parent="Container/Controls/Right Box/Images"]
+margin_top = 144.0
+margin_right = 289.0
+margin_bottom = 176.0
+texture = ExtResource( 11 )
+
+[node name="B" type="TextureRect" parent="Container/Controls/Right Box/Images"]
+margin_top = 180.0
+margin_right = 289.0
+margin_bottom = 212.0
+texture = ExtResource( 12 )
+
+[node name="E" type="TextureRect" parent="Container/Controls/Right Box/Images"]
+margin_top = 216.0
+margin_right = 289.0
+margin_bottom = 248.0
+texture = ExtResource( 13 )
+
+[node name="Tab" type="TextureRect" parent="Container/Controls/Right Box/Images"]
+margin_top = 252.0
+margin_right = 289.0
+margin_bottom = 284.0
+texture = ExtResource( 14 )
+
+[node name="Equip" type="HBoxContainer" parent="Container/Controls/Right Box/Images"]
+editor/display_folded = true
+margin_top = 288.0
+margin_right = 289.0
+margin_bottom = 320.0
+
+[node name="E" type="TextureRect" parent="Container/Controls/Right Box/Images/Equip"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 13 )
+
+[node name="Right Click" type="Label" parent="Container/Controls/Right Box/Images/Equip"]
+margin_left = 36.0
+margin_top = 9.0
+margin_right = 115.0
+margin_bottom = 23.0
+text = "or right click"
+
+[node name="Swap" type="HBoxContainer" parent="Container/Controls/Right Box/Images"]
+margin_top = 324.0
+margin_right = 289.0
+margin_bottom = 356.0
+
+[node name="S" type="TextureRect" parent="Container/Controls/Right Box/Images/Swap"]
+margin_right = 32.0
+margin_bottom = 32.0
+texture = ExtResource( 7 )
+
+[node name="Drag and Drop and Right Click" type="Label" parent="Container/Controls/Right Box/Images/Swap"]
+margin_left = 36.0
+margin_right = 289.0
+margin_bottom = 31.0
+rect_min_size = Vector2( 253, 28 )
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "(first S to select item, second S to swap items) or drag and drop with left click"
+autowrap = true
+
+[node name="Esc" type="TextureRect" parent="Container/Controls/Right Box/Images"]
+margin_top = 360.0
+margin_right = 289.0
+margin_bottom = 392.0
+texture = ExtResource( 15 )
